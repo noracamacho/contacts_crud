@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { Card, Container, Row, Stack } from "react-bootstrap";
 import Swal from "sweetalert2";
+import AddIcon from '@mui/icons-material/Add';
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 import ModeEditOutlineOutlinedIcon from "@mui/icons-material/ModeEditOutlineOutlined";
 
@@ -46,12 +47,10 @@ const ListElements= ({ elementsList, selectElement, getElements, openForm }) => 
 
   return (
     <Container className="mt-5 mb-5">
-      <div className="header__container">
         <div className="header">
             <h1>Users</h1>
-            <button onClick={() => openForm()}>Create new user</button>
+            <button onClick={() => openForm()}><AddIcon />Create new user</button>
         </div>
-      </div>
         <Row>
         {elementsListOrd.map((element) => (
             <div key={element.id} className="col-4 mb-3 user_card">
