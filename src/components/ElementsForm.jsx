@@ -1,0 +1,96 @@
+import axios from "axios";
+import React, { useEffect } from "react";
+import Swal from "sweetalert2";
+import { useForm } from "react-hook-form";
+import CloseIcon from "@mui/icons-material/Close";
+
+
+const ElementsForm = ({ getElements, elementSelected, selectElement, closeForm }) => {
+
+  const { handleSubmit, register, reset } = useForm();
+  const emptyElement = { first_name: "", last_name: "", email: "", password: "", birthday: "" };
+
+  useEffect(() => {
+    if (elementSelected) {
+      reset(elementSelected);
+    } else {
+      reset(emptyElement);
+    }
+  }, [elementSelected]);
+
+  const submit = (data) => {
+    if (elementSelected) {
+      axios.put(`https://users-crud.academlo.tech/users/${elementSelected.id}/`, data).then((response) => {
+        if (response.status === 200) {
+          Swal.fire({
+            icon: "success",
+            title: "Good job!",
+            text: `User "${response.data.first_name} ${response.data.last_name}" was successfully updated`,
+          });
+          closeForm();
+          getElements();
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong, update was not possible!",
+          });
+        }
+      });
+    } else {
+      axios.post('https://users-crud.academlo.tech/users/', data).then((response) => {
+        if (response.status === 201) {
+          // Alert using seeetalert2
+          Swal.fire({
+            icon: "success",
+            title: "Good job!",
+            text: `User "${response.data.first_name} ${response.data.last_name}" was successfully created`,
+            confirmButtonColor: "#555A88",
+          });
+          closeForm();
+          getElements();
+          reset(emptyElement);
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+          });
+        }
+      });
+    }
+  };
+
+  return (
+      <div id="form_container">
+        <form className="card__form" onSubmit={handleSubmit(submit)}>
+          {/* <button onClick={handleClose} className="close__button"><CloseIcon /></button> */}
+          <button onClick={() => closeForm()} className="close__button"><CloseIcon /></button>
+          <h1 className="mt-3 mb-5">{elementSelected ? 'Update User' : 'New User'}</h1>
+          <div className="input-container mb-4">
+            <label htmlFor="first_name">First Name</label>
+            <input className="form-control-lg" type="text" id="first_name" placeholder="First Name" {...register("first_name")} required/>
+          </div>
+          <div className="input-container mb-4">
+            <label htmlFor="last_name">Last Name</label>
+            <input className="form-control-lg" type="text" id="last_name" placeholder="Last Name" {...register("last_name")} required/>
+          </div>
+          <div className="input-container mb-4">
+            <label htmlFor="email">Email</label>
+            <input className="form-control-lg" type="email" id="email" placeholder="Email" {...register("email")} required/>
+          </div>
+          <div className="input-container mb-4">
+            <label htmlFor="password">Password</label>
+            <input className="form-control-lg" type="password" id="password" placeholder="Password" {...register("password")} required/>
+          </div>
+          <div className="input-container mb-5">
+            <label htmlFor="birthday">Birthday</label>
+            <input className="form-control-lg" type="date" id="birthday" {...register("birthday")} required/>
+          </div>
+          <button className="btn-send">{elementSelected ? 'Update' : 'Submit'}</button>
+        </form>
+      </div>
+  );
+};
+
+export default ElementsForm;

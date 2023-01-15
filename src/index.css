@@ -1,0 +1,185 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* text-align: center; */
+  box-sizing: border-box;
+}
+
+.App {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 36px;
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  z-index: 2;
+  width: 90%;
+  height: 4rem;
+  margin: 0 auto;
+  box-shadow: 1px 1px 1px rgb(245, 243, 243);
+  overscroll-behavior-x:contain;
+  /* margin-; */
+}
+
+.user_card {
+  min-width: 440px !important;
+  height: 280px !important;
+  margin: 0 auto;
+}
+
+.header h1 {
+  /* margin-left: 7rem; */
+  margin-top: 1rem;
+}
+.header button {
+  /* margin-right: 3rem; */
+  margin-top: 1rem;
+  width: 227px;
+ height: 45px;
+ background: #555A88;
+ color: white;
+}
+
+#form_container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.535) !important;
+  z-index: 100;
+} 
+
+.card__form {
+  padding-top: 1rem;
+  background: #ffff;
+  width: 419px !important;
+  height: 731px !important;
+  border-radius: 1px !important;
+  padding: 20px;
+  border: 1px solid silver;
+}
+.close__button {
+  /* background-color: #D93F3F; */
+  /* color: #0F0F2D; */
+  background: transparent;
+  border: none;
+  float: right;
+
+}
+
+.btn-send {
+  color: #ffff !important;
+  background: #555A88 !important;
+  width: 100%;
+  height: 46px !important;
+  border-radius: 3px !important;
+}
+.btn-secondary {
+  background: #d3d3d3 !important;
+  border: 1px solid #BDBDBD !important;
+  border-radius: 4px;
+  /* background: #F7F7F7 !important; */
+}
+.btn-danger {
+  background: #D85D5D !important;
+  border: 1px solid #D93F3F !important;
+}
+
+
+/*! ++++++++++++++++++++ */
+.input-container {
+  margin-bottom: 10px;
+}
+
+.input-container input {
+  display: block;
+  padding: 8px 10px;
+  margin-top: 5px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid silver;
+}
+
+.input-container input[type="checkbox"] {
+  display: inline;
+  width: auto;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+form button {
+  background: greenyellow;
+}
+
+.products-list {
+  width: 50%;
+}
+
+.products-list ul {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.products-list ul li {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.products-list ul li h4 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 568px) {
+  .App {
+    padding: 2px;
+  }
+  .container {
+    width: 100% !important;
+  }
+  .header {
+    position: fixed;
+    top: 1rem;
+    margin: 0 auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    margin-bottom: 4rem;
+  }
+  h1 {
+    text-align: center;
+    width: 100% !important;
+  }
+
+  .row {
+    position: absolute;
+    top: 10rem;
+  }
+  .user_card {
+    min-width: 370px !important;
+    height: 280px !important;
+    margin: 0 auto;
+    transition: all 0.6s;
+}
+}
