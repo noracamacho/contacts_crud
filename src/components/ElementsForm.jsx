@@ -87,7 +87,7 @@ const ElementsForm = ({ getElements, elementSelected, setElementSelected, closeF
           </div>
           <div className="input-container mb-5">
             <label htmlFor="birthday">Birthday</label>
-            <input className="form-control-lg" type="date" id="birthday" {...register("birthday")} required/>
+            <input className="form-control-lg" placeholder="dd/mm/yyy" type="date" id="birthday" {...register("birthday")} required/>
           </div>
           <button className="btn-send">{elementSelected ? 'Update' : 'Submit'}</button>
         </form>
