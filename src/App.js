@@ -34,15 +34,13 @@ function App() {
         elementsList={elementsList} 
         selectElement={selectElement} 
         getElements={getElements}
-        openForm={openForm} 
-        closeForm={closeForm} />
+        openForm={openForm} />
       {userForm &&
         <ElementsForm
         getElements={getElements}
         elementSelected={elementSelected}
         setElementSelected={setElementSelected}
-        closeForm={closeForm}
-        />}
+        closeForm={closeForm} />}
     </div>
   );
 }
