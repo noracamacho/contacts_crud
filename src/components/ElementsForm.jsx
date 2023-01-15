@@ -16,6 +16,7 @@ const ElementsForm = ({ getElements, elementSelected, selectElement, closeForm }
     } else {
       reset(emptyElement);
     }
+    // eslint-disable-next-line
   }, [elementSelected]);
 
   const submit = (data) => {

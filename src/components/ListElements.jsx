@@ -9,9 +9,6 @@ const ListElements= ({ elementsList, selectElement, getElements, openForm, close
 
   const elementsListOrd = elementsList.sort((a, b) => a.first_name.localeCompare(b.first_name));
 
-  // console.log(element);
-    // axios.delete(`https://users-crud.academlo.tech/users/${element.id}`)
-    //   .then(() => getElements());
   const deleteElement = (element) => {
     // Alert using seeetalert2
     Swal.fire({
@@ -24,7 +21,6 @@ const ListElements= ({ elementsList, selectElement, getElements, openForm, close
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        // const nameToDelete = `${user.first_name} ${user.last_name}`;
         axios.delete(`https://users-crud.academlo.tech/users/${element.id}`).then((response) => {
           console.log(response);
           if (response.status === 204) {
@@ -32,7 +28,6 @@ const ListElements= ({ elementsList, selectElement, getElements, openForm, close
             Swal.fire({
               icon: "success",
               title: "Deleted!",
-              // text: `User "${nameToDelete}" was succesfuly deleted`,
               text: `User "${element.first_name} ${element.last_name}" was successfully deleted`,
               confirmButtonColor: "#555A88",
 
