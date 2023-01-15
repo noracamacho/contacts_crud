@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import CloseIcon from "@mui/icons-material/Close";
 
 
-const ElementsForm = ({ getElements, elementSelected, selectElement, closeForm }) => {
+const ElementsForm = ({ getElements, elementSelected, setElementSelected, closeForm }) => {
 
   const { handleSubmit, register, reset } = useForm();
   const emptyElement = { first_name: "", last_name: "", email: "", password: "", birthday: "" };
@@ -15,6 +15,7 @@ const ElementsForm = ({ getElements, elementSelected, selectElement, closeForm }
       reset(elementSelected);
     } else {
       reset(emptyElement);
+      // console.log(elementSelected);
     }
     // eslint-disable-next-line
   }, [elementSelected]);
@@ -23,18 +24,21 @@ const ElementsForm = ({ getElements, elementSelected, selectElement, closeForm }
     if (elementSelected) {
       axios.put(`https://users-crud.academlo.tech/users/${elementSelected.id}/`, data).then((response) => {
         if (response.status === 200) {
+          closeForm();
           Swal.fire({
             icon: "success",
-            title: "Good job!",
+            // title: "Good job!",
             text: `User "${response.data.first_name} ${response.data.last_name}" was successfully updated`,
+            confirmButtonColor: "#555A88",
           });
-          closeForm();
+          setElementSelected(null);
           getElements();
         } else {
           Swal.fire({
             icon: "error",
-            title: "Oops...",
+            // title: "Oops...",
             text: "Something went wrong, update was not possible!",
+            confirmButtonColor: "#555A88",
           });
         }
       });
@@ -44,7 +48,7 @@ const ElementsForm = ({ getElements, elementSelected, selectElement, closeForm }
           // Alert using seeetalert2
           Swal.fire({
             icon: "success",
-            title: "Good job!",
+            // title: "Good job!",
             text: `User "${response.data.first_name} ${response.data.last_name}" was successfully created`,
             confirmButtonColor: "#555A88",
           });
@@ -54,8 +58,9 @@ const ElementsForm = ({ getElements, elementSelected, selectElement, closeForm }
         } else {
           Swal.fire({
             icon: "error",
-            title: "Oops...",
+            // title: "Oops...",
             text: "Something went wrong!",
+            confirmButtonColor: "#555A88",
           });
         }
       });

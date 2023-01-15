@@ -30,7 +30,6 @@ const ListElements= ({ elementsList, selectElement, getElements, openForm, close
               title: "Deleted!",
               text: `User "${element.first_name} ${element.last_name}" was successfully deleted`,
               confirmButtonColor: "#555A88",
-
             });
             getElements();
           } else {
@@ -39,6 +38,7 @@ const ListElements= ({ elementsList, selectElement, getElements, openForm, close
               icon: "error",
               title: "Oops...",
               text: `Something went wrong, user ${response.data.first_name} ${response.data.last_name} was not deleted!`,
+              confirmButtonColor: "#555A88",
             });
           }
         })

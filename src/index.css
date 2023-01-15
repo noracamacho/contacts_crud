@@ -24,21 +24,17 @@
   margin: 0 auto;
   box-shadow: 1px 1px 1px rgb(245, 243, 243);
   overscroll-behavior-x:contain;
-  /* margin-; */
 }
 
 .user_card {
-  min-width: 440px !important;
+  min-width: 430px !important;
   height: 280px !important;
-  margin: 0 auto;
 }
 
 .header h1 {
-  /* margin-left: 7rem; */
   margin-top: 1rem;
 }
 .header button {
-  /* margin-right: 3rem; */
   margin-top: 1rem;
   width: 227px;
  height: 45px;
@@ -69,14 +65,18 @@
   border: 1px solid silver;
 }
 .close__button {
-  /* background-color: #D93F3F; */
-  /* color: #0F0F2D; */
   background: transparent;
   border: none;
   float: right;
-
 }
 
+.row {
+  margin: 0 auto !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+}
 .btn-send {
   color: #ffff !important;
   background: #555A88 !important;
@@ -88,7 +88,6 @@
   background: #d3d3d3 !important;
   border: 1px solid #BDBDBD !important;
   border-radius: 4px;
-  /* background: #F7F7F7 !important; */
 }
 .btn-danger {
   background: #D85D5D !important;
@@ -97,9 +96,9 @@
 
 
 /*! ++++++++++++++++++++ */
-.input-container {
+/* .input-container {
   margin-bottom: 10px;
-}
+} */
 
 .input-container input {
   display: block;
@@ -110,10 +109,10 @@
   border: 1px solid silver;
 }
 
-.input-container input[type="checkbox"] {
+/* .input-container input[type="checkbox"] {
   display: inline;
   width: auto;
-}
+} */
 
 button {
   padding: 10px 15px;
@@ -122,9 +121,6 @@ button {
   cursor: pointer;
 }
 
-form button {
-  background: greenyellow;
-}
 
 .products-list {
   width: 50%;

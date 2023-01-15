@@ -40,7 +40,7 @@ function App() {
         <ElementsForm
         getElements={getElements}
         elementSelected={elementSelected}
-        selectElement={selectElement}
+        setElementSelected={setElementSelected}
         closeForm={closeForm}
         />}
     </div>
