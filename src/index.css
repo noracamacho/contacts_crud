@@ -35,7 +35,11 @@
   height: 280px !important;
 }
 .header h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0F0F2D;
   margin-top: 1rem;
+  font-size: 50px;
+  font-weight: 700;
 }
 .header button {
   margin-top: 1rem;
@@ -114,7 +118,7 @@
     width: 100% !important;
   }
   .header__container {
-    height: 8rem;
+    height: 9rem;
   }
   .header {
     position: fixed;  
@@ -123,13 +127,14 @@
     align-items: center !important;
     z-index: 3;
     padding-bottom: 0.5rem !important;
-    height: 8rem !important;
+    height: 9rem !important;
     top: 0;
     right: 0;
   }
   h1 {
     text-align: center;
-    width: 100% !important;
+    font-size: 45px;
+    /* width: 100% !important; */
   }
   .row {
     position: absolute;
