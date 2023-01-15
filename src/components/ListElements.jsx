@@ -44,11 +44,10 @@ const ListElements= ({ elementsList, selectElement, getElements, openForm, close
         })
       }
     })
-    
   };
 
   return (
-    <>
+    // <>
     <Container className="mt-5 mb-5">
         <div className="header">
             <h1>Users</h1>
@@ -76,7 +75,7 @@ const ListElements= ({ elementsList, selectElement, getElements, openForm, close
         ))}
         </Row>
      </Container>
-     </>
+    //  </>
   );
 
 };

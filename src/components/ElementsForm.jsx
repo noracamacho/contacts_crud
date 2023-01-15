@@ -15,7 +15,6 @@ const ElementsForm = ({ getElements, elementSelected, setElementSelected, closeF
       reset(elementSelected);
     } else {
       reset(emptyElement);
-      // console.log(elementSelected);
     }
     // eslint-disable-next-line
   }, [elementSelected]);
@@ -25,6 +24,7 @@ const ElementsForm = ({ getElements, elementSelected, setElementSelected, closeF
       axios.put(`https://users-crud.academlo.tech/users/${elementSelected.id}/`, data).then((response) => {
         if (response.status === 200) {
           closeForm();
+          // Alert using seeetalert2
           Swal.fire({
             icon: "success",
             // title: "Good job!",
@@ -34,6 +34,7 @@ const ElementsForm = ({ getElements, elementSelected, setElementSelected, closeF
           setElementSelected(null);
           getElements();
         } else {
+          // Alert using seeetalert2
           Swal.fire({
             icon: "error",
             // title: "Oops...",
@@ -56,6 +57,7 @@ const ElementsForm = ({ getElements, elementSelected, setElementSelected, closeF
           getElements();
           reset(emptyElement);
         } else {
+          // Alert using seeetalert2
           Swal.fire({
             icon: "error",
             // title: "Oops...",
@@ -70,7 +72,6 @@ const ElementsForm = ({ getElements, elementSelected, setElementSelected, closeF
   return (
       <div id="form_container">
         <form className="card__form" onSubmit={handleSubmit(submit)}>
-          {/* <button onClick={handleClose} className="close__button"><CloseIcon /></button> */}
           <button onClick={() => closeForm()} className="close__button"><CloseIcon /></button>
           <h1 className="mt-3 mb-5">{elementSelected ? 'Update User' : 'New User'}</h1>
           <div className="input-container mb-4">
