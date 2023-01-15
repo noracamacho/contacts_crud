@@ -46,10 +46,12 @@ const ListElements= ({ elementsList, selectElement, getElements, openForm }) => 
 
   return (
     <Container className="mt-5 mb-5">
+      <div className="header__container">
         <div className="header">
             <h1>Users</h1>
             <button onClick={() => openForm()}>Create new user</button>
         </div>
+      </div>
         <Row>
         {elementsListOrd.map((element) => (
             <div key={element.id} className="col-4 mb-3 user_card">
