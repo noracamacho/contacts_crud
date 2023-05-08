@@ -20,7 +20,7 @@ const ElementsForm = ({ getElements, elementSelected, setElementSelected, closeF
 
   const submit = (data) => {
     if (elementSelected) {
-      axios.put(`https://users-crud.academlo.tech/users/${elementSelected.id}/`, data).then((response) => {
+      axios.put(`https://users-crud-pppc.onrender.com/${elementSelected.id}/`, data).then((response) => {
         if (response.status === 200) {
           closeForm();
           // Alert using seeetalert2
@@ -41,7 +41,7 @@ const ElementsForm = ({ getElements, elementSelected, setElementSelected, closeF
         }
       });
     } else {
-      axios.post('https://users-crud.academlo.tech/users/', data).then((response) => {
+      axios.post('https://users-crud-pppc.onrender.com/users/', data).then((response) => {
         if (response.status === 201) {
           // Alert using seeetalert2
           Swal.fire({

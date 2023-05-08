@@ -22,7 +22,7 @@ const ListElements= ({ elementsList, selectElement, getElements, openForm }) => 
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`https://users-crud.academlo.tech/users/${element.id}`).then((response) => {
+        axios.delete(`https://users-crud-pppc.onrender.com/users/${element.id}`).then((response) => {
           console.log(response);
           if (response.status === 204) {
             // Alert using seeetalert2

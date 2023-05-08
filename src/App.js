@@ -13,7 +13,7 @@ function App() {
   }, []);
   
   const getElements = () => {
-    axios.get('https://users-crud.academlo.tech/users/')
+    axios.get('https://users-crud-pppc.onrender.com/users/')
     .then((res) => setElementsList(res.data));
   };
   
