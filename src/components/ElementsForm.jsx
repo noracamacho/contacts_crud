@@ -20,7 +20,7 @@ const ElementsForm = ({ getElements, elementSelected, setElementSelected, closeF
 
   const submit = (data) => {
     if (elementSelected) {
-      axios.put(`https://users-crud-pppc.onrender.com/${elementSelected.id}/`, data).then((response) => {
+      axios.put(`https://users-crud-pppc.onrender.com/users/${elementSelected.id}/`, data).then((response) => {
         if (response.status === 200) {
           closeForm();
           // Alert using seeetalert2
